@@ -5,8 +5,8 @@ import pprint
 class MyWebService(object):
 
    @cherrypy.expose
-   def index():
-      print('Hello fizzbuzz')
+   def index(self):
+      return 'Hello There! Access /fizzbuzz to print fizzbuzz number sequence'
 
    @cherrypy.expose
    @cherrypy.tools.json_out()
