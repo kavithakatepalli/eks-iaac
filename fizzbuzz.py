@@ -8,6 +8,8 @@ class MyWebService(object):
    @cherrypy.tools.json_out()
    @cherrypy.tools.json_in()
    def fizzbuzz(self,start=1,end=100):
+      def index():
+          print('Hello fizzbuzz')
       def int_to_fizzbuzz(i):
            entry = ''
            if i%3 == 0:
