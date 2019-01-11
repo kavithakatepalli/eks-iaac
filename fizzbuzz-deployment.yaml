@@ -1,0 +1,29 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: fizzbuzz
+  name: fizzbuzz 
+  namespace: default
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: fizzbuzz 
+    spec:
+      containers:
+      - image: kavithakatepalli/fizzbuzz:1.1
+        imagePullPolicy: IfNotPresent
+        name: fizzbuzz
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+        resources: {}
+      securityContext: {}
+      terminationGracePeriodSeconds: 0
+status: {}
+
