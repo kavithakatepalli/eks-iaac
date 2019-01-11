@@ -1,0 +1,29 @@
+apiVersion: gitkube.sh/v1alpha1
+kind: Remote
+metadata:
+  creationTimestamp: null
+  name: remote8
+  namespace: default
+spec:
+  authorizedKeys:
+  - |
+    ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDRBlsT4tgMnwsz6XVz0apyZGNQsnmi/odMnzPRR4k3rQAtW4ayWcgOaJivcspyGN4/3Q44bApbvV7hxvejzi0fFymyn3sSKkK+sHCBdfuvVHpmuYUMkuTcQ9MfDFWa8DyLT0C+56zP63P+/t9sqDQgcz+owEhC6xR2mi1i8Y7XCwmdZK90fZ8gDPcZcV4ssRPHcW+rt6tLOgPmMFpS61dKsW70BlYCxS8f0YVSXww/hsp5UGBCFv2zsnhbQkNViXzhwE5BCmkKzvDQC6Atit1SlqsIHaf0HjwZOJQprQFNYRo9hb8yNR7HWHggUQSodUYjT08n0ryFwuqSI+gN0yyd kavitha@Kavithas-MacBook-Pro.local
+  deployments:
+  - containers:
+    - dockerfile: Dockerfile
+      name: fizzbuzz
+      path: ./
+    name: fizzbuzz
+  manifests:
+    helm: 
+      release: fizzbuzzrel
+    path: fizzbuzz
+  registry:
+    credentials:
+      secretKeyRef:
+        key: ""
+      secretRef: remote8-regsecret
+    url: docker.io/kavithakatepalli
+status:
+  remoteUrl: ""
+  remoteUrlDesc: ""
